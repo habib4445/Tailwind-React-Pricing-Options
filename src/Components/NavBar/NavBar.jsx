@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { Menu } from "lucide-react";
 
+
+const links=[
+    
+]
 const navLinks = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "About", path: "/about" },
@@ -8,28 +13,32 @@ const navLinks = [
   { id: 5, name: "Contact", path: "/contact" }
 ];
 
-
-
 const NavBar = () => {
-    return (
-    <nav>
-<ul className="flex">
-    {navLinks.map(route => (
-        <li key={route.id} className="mr-10">
+  const [open, setOpen] = useState(false);
+const links =[]
+  return (
+    <nav className="flex justify-between mx-10">
+      <span className="flex" onClick={() => setOpen(!open)}>
+        {
+      
+          open ?
+
+         <X className="md:hidden"></X> : 
+         <Menu className="md:hidden"></Menu>}
+        <h3 className="ml-4">My Navbar</h3>
+      </span>
+
+      <ul className="flex">
+        {navLinks.map((route) => (
+          <li key={route.id} className="mr-10">
             <a href={route.path}>{route.name}</a>
-        </li>
-    ))}
-</ul>
+          </li>
+        ))}
+      </ul>
 
-
-
-        {/* <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul> */}
+      <button>Sign In</button>
     </nav>
-    )
-}
+  );
+};
+
 export default NavBar;
