@@ -4,15 +4,17 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import DaisyNav from "./components/DaisyNav/DaisyNav";
+import NavBar from './Components/NavBar/NavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
     
 
    <header>
+    <NavBar></NavBar>
     <DaisyNav></DaisyNav>
    </header>
 <main>
